@@ -1,4 +1,5 @@
-# TODO: Add base image (e.g., node:16-alpine)
-# TODO: Copy frontend code
-# TODO: Install dependencies
-# TODO: Run frontend app
+FROM node:16-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["npm", "start"]

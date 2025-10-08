@@ -1,9 +1,5 @@
-# TODO: Add base image (e.g., python:3.9-slim)
-# TODO: Copy backend code
-# TODO: Install dependencies
-# TODO: Run backend app
 FROM python:3.9-slim
 WORKDIR /app
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
-CMD ["python", "app.py"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "3000"]
